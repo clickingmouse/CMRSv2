@@ -35,8 +35,11 @@ class Play extends Component {
   componentDidUpdate(prevProps) {
     // Typical usage (don't forget to compare props):
     console.log(".................componenet did update", prevProps);
+    console.log(".................", this.props);
+
     const video = this.myRef.current;
     console.log(video);
+    video.load();
     const currentTrack = video.textTracks;
     console.log(currentTrack);
     console.log(video.textTracks[0].cues);
@@ -58,6 +61,7 @@ class Play extends Component {
     const type = this.props.type;
     var filetype = type.split("/")[0];
     console.log(filetype);
+
     var testCue;
     console.log("------------------->", this.props.caption);
     const media = this.props.media;
@@ -80,18 +84,8 @@ class Play extends Component {
     } else if (filetype === "video") {
       player = (
         <ResponsiveEmbed aspectRatio="16by9">
-          <video controls>
-            <source src={this.media + "#t=0,5"} type="video/ogg" />
-            <track
-              id="track"
-              default
-              label="English"
-              kind="captions"
-              srcLang="en"
-              onCueChange={() => {
-                console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-              }}
-            />
+          <video ref={this.myRef} preload="auto" autoPlay controls>
+            <source src={media + "#t=0,5"} />
           </video>
         </ResponsiveEmbed>
       );

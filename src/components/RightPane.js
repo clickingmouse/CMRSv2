@@ -6,7 +6,7 @@ import { Container, Button, Modal } from "react-bootstrap";
 import FrameEditor from "./FrameEditor";
 import PlayAll from "./PlayAll";
 import testmedia1 from "../media/Wildlife.ogv";
-import testmedia2 from "../media/Wildlife.ogv";
+import testmedia2 from "../media/SampleVideo_1280x720_5mb.mp4";
 import testimg1 from "../media/background-1.png";
 import testimg2 from "../media/supermarkt.jpeg";
 
@@ -42,6 +42,42 @@ const trial = [
     file: { name: "Wildlife.ogv", type: "image/jpg" },
     fileUrl: "",
     source: testimg1,
+    test: testmedia1
+  }
+];
+
+const trialV = [
+  {
+    playLength: 5,
+    style: "",
+    caption: "abc",
+    capPos: "center",
+    remix: "",
+    file: { name: "Wildlife.ogv", type: "video/png" },
+    fileUrl: "",
+    source: testmedia1,
+    test: testmedia1
+  },
+  {
+    playLength: 3,
+    style: "",
+    caption: "123",
+    capPos: "center",
+    remix: "",
+    file: { name: "Wildlife.ogv", type: "video/png" },
+    fileUrl: "",
+    source: testmedia2,
+    test: testmedia2
+  },
+  {
+    playLength: 3,
+    style: "",
+    caption: "you and me",
+    capPos: "center",
+    remix: "",
+    file: { name: "Wildlife.ogv", type: "video/jpg" },
+    fileUrl: "",
+    source: testmedia1,
     test: testmedia1
   }
 ];
@@ -99,6 +135,7 @@ export default function RightPane(props) {
           <Modal.Body>
             <h4>Preview</h4>
             <PlayAll playlist={trial} />
+            {/*<PlayAll playlist={trial} />*/}
           </Modal.Body>
           <Modal.Footer>
             <Button onClick={handleClose}>Close</Button>
