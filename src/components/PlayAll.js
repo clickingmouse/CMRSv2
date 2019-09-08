@@ -54,11 +54,13 @@ export default function PlayAll(props) {
           <Play
             media={props.playlist[currentIndex].source}
             type={props.playlist[currentIndex].file.type}
+            caption={props.playlist[currentIndex].caption}
+            duration={props.playlist[currentIndex].playLength}
+            test={props.playlist[currentIndex].test}
           />
           <Card.Title>Frame idx - </Card.Title>
         </Card.Body>
       </Card>
-      <FilePreview input={testmedia} />
     </div>
   );
 }

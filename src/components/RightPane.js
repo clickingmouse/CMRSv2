@@ -5,30 +5,33 @@ import { Container, Button, Modal } from "react-bootstrap";
 //import FramePreview from "./FramePreview";
 import FrameEditor from "./FrameEditor";
 import PlayAll from "./PlayAll";
-import testmedia from "../media/Wildlife.ogv";
+import testmedia1 from "../media/Wildlife.ogv";
+import testmedia2 from "../media/Wildlife.ogv";
 import testimg1 from "../media/background-1.png";
 import testimg2 from "../media/supermarkt.jpeg";
 
 const trial = [
   {
-    playLength: 1,
+    playLength: 5,
     style: "",
     caption: "abc",
     capPos: "center",
     remix: "",
     file: { name: "Wildlife.ogv", type: "image/png" },
     fileUrl: "",
-    source: testimg1
+    source: testimg1,
+    test: testmedia1
   },
   {
-    playLength: 2,
+    playLength: 3,
     style: "",
     caption: "123",
     capPos: "center",
     remix: "",
     file: { name: "Wildlife.ogv", type: "image/png" },
     fileUrl: "",
-    source: testimg2
+    source: testimg2,
+    test: testmedia2
   },
   {
     playLength: 3,
@@ -38,7 +41,8 @@ const trial = [
     remix: "",
     file: { name: "Wildlife.ogv", type: "image/jpg" },
     fileUrl: "",
-    source: testimg1
+    source: testimg1,
+    test: testmedia1
   }
 ];
 
