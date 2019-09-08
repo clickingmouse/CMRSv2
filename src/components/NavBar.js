@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Container } from "react-bootstrap";
+import { Navbar } from "react-bootstrap";
 export default function NavBar() {
   return (
     <Navbar bg="dark" variant="dark" expand="lg">

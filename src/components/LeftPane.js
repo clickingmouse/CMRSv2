@@ -3,29 +3,57 @@ import React, { useState } from "react";
 //import Remix from "./leftpanel/Remix";
 //import VideoFile from "./leftpanel/VideoFile";
 //import TextInput from "./leftpanel/TextInput";
-import FilePreview from "./FilePreview";
+//import FilePreview from "./FilePreview";
+import MediaPreview from "./MediaPreview";
 import {
   Container,
   Form,
-  FormControl,
-  FormGroup,
+  // FormControl,
+  // FormGroup,
   Row,
   Col,
   Button
 } from "react-bootstrap";
 
-export default function LeftPane() {
+export default function LeftPane(props) {
   const [input, setInput] = useState({
+    playLength: 3,
     style: "",
     caption: "",
+    capPos: "center",
     remix: "",
     file: "",
     fileUrl: ""
   });
   const [fileReset, setFileReset] = useState(0);
+
+  const setMediaPlayTime = length => {
+    console.log("media length is: ", length);
+    setInput({
+      ...input,
+      playLength: length
+    });
+
+    setTimeout(() => {
+      console.log(input);
+    }, 1000);
+  };
+
   const handleSubmit = e => {
     e.preventDefault();
     console.log("form submitted", input);
+    props.handleSubmit(input);
+    setInput({
+      ...input,
+      style: "",
+      caption: "",
+      remix: "",
+      file: "",
+      fileUrl: ""
+    });
+    // setTimeout(() => {
+    //   console.log(input);
+    // }, 1000);
     // reset to 'no file chosen in file upload selection
     setFileReset(1);
   };
@@ -37,7 +65,7 @@ export default function LeftPane() {
       ...input,
       [e.target.id]: e.target.value
     });
-    console.log(input);
+    //console.log(input);
   };
 
   const handleFile = e => {
@@ -47,8 +75,8 @@ export default function LeftPane() {
     reader.onloadend = () => {
       setInput({
         ...input,
-        ["file"]: file,
-        ["fileUrl"]: reader.result
+        file: file,
+        fileUrl: reader.result
       });
     };
     reader.readAsDataURL(file);
@@ -101,7 +129,11 @@ export default function LeftPane() {
         </Form.Group>
         <div style={{ height: "25vh" }}>
           video/image placeholder
-          <FilePreview input={input} />
+          {input.file ? (
+            <MediaPreview input={input} setMediaPlayTime={setMediaPlayTime} />
+          ) : (
+            ""
+          )}
         </div>
         <Form.Group controlId="caption">
           <Form.Label>Caption</Form.Label>
@@ -110,6 +142,7 @@ export default function LeftPane() {
             rows="3"
             placeholder="Enter caption text"
             onChange={handleChange}
+            value={input.caption}
           />
           <Form.Text className="text-muted">Caption goes here</Form.Text>
         </Form.Group>
