@@ -85,7 +85,7 @@ class Play extends Component {
       player = (
         <ResponsiveEmbed aspectRatio="16by9">
           <video ref={this.myRef} preload="auto" autoPlay controls>
-            <source src={media + "#t=0,5"} />
+            <source src={media + "#t=0," + this.props.duration} />
           </video>
         </ResponsiveEmbed>
       );
