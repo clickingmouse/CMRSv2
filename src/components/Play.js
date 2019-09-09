@@ -1,6 +1,6 @@
 import React, { Component, useEffect, useLayoutEffect, useRef } from "react";
 import { ResponsiveEmbed } from "react-bootstrap";
-
+import placeholderMedia from "../media/Wildlife.ogv";
 import testmedia from "../media/Wildlife.ogv";
 import testmedia1 from "../media/Wildlife.ogv";
 import testimg1 from "../media/background-1.png";
@@ -18,7 +18,7 @@ class Play extends Component {
   componentDidMount() {
     console.log(
       "componenet did mount....................",
-      this.myRef.current,
+      // this.myRef.current,
       this.props.caption
     );
     const video = this.myRef.current;
@@ -77,7 +77,7 @@ class Play extends Component {
             poster={media}
             preload="auto"
             onLoadStart={console.log(">>>>>>>>>>>>>>>>>NEW")}
-            src={this.props.test}
+            src={placeholderMedia}
           ></video>
         </ResponsiveEmbed>
       );

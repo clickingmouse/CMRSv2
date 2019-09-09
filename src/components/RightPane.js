@@ -134,7 +134,7 @@ export default function RightPane(props) {
           </Modal.Header>
           <Modal.Body>
             <h4>Preview</h4>
-            <PlayAll playlist={trial} />
+            <PlayAll playlist={frames} />
             {/*<PlayAll playlist={trial} />*/}
           </Modal.Body>
           <Modal.Footer>

@@ -42,8 +42,6 @@ export default function FrameEditor(props) {
 
   return (
     <div>
-      FRAME
-      <hr />
       <Card style={{ width: "100%" }}>
         <Card.Header>
           <Button

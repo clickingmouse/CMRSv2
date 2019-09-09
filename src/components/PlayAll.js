@@ -52,7 +52,7 @@ export default function PlayAll(props) {
         <Card.Body>
           {console.log("playing ... ", currentIndex)}
           <Play
-            media={props.playlist[currentIndex].source}
+            media={props.playlist[currentIndex].fileUrl}
             type={props.playlist[currentIndex].file.type}
             caption={props.playlist[currentIndex].caption}
             duration={props.playlist[currentIndex].playLength}
