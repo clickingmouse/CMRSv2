@@ -112,7 +112,7 @@ export default function RightPane(props) {
         {frames &&
           frames.map((frame, index) => {
             // set default values
-            return <FrameEditor input={frame} key={index} />;
+            return <FrameEditor input={frame} key={index} index={index} />;
           })}
         {/*      <PlayAll />  <FramePreview />*/}
         <Button variant="primary" onClick={handleShow}>

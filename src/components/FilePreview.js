@@ -8,11 +8,10 @@ export default function FilePreview(props) {
   if (fileUrl) {
     visible = (
       <Container>
-        <video controls src={fileUrl} preload="metadata" width="100%" />
+        <video controls src={fileUrl} preload="metadata" height="auto" />
       </Container>
     );
   } else {
-    console.log("nothing");
   }
 
   return <div style={{ width: "auto" }}>{visible}</div>;

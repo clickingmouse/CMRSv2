@@ -26,7 +26,7 @@ export default function MediaPreview(props) {
   //   console.log("not image");
   // }
   return (
-    <div style={{ width: "auto" }}>
+    <div style={{ height: "100%" }}>
       {filetype === "image" ? (
         <ResponsiveEmbed aspectRatio="16by9">
           <video

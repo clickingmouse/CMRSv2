@@ -46,6 +46,7 @@ export default function LeftPane(props) {
     setInput({
       ...input,
       style: "",
+      playLength: 3,
       caption: "",
       remix: "",
       file: "",
@@ -89,7 +90,7 @@ export default function LeftPane(props) {
           <Col>
             <Form.Group controlId="style" onClick={handleChange}>
               <Form.Label>Select Style I</Form.Label>
-              <Form.Control as="button" value="styleI">
+              <Form.Control as="button" value="styleI" disabled>
                 Style I
               </Form.Control>
             </Form.Group>
@@ -97,13 +98,12 @@ export default function LeftPane(props) {
           <Col>
             <Form.Group controlId="style" onClick={handleChange}>
               <Form.Label>Select Style II</Form.Label>
-              <Form.Control as="button" value="styleII">
+              <Form.Control as="button" value="styleII" disabled>
                 Style II
               </Form.Control>
             </Form.Group>
           </Col>
         </Row>
-
         <Form.Group controlId="remix">
           <Form.Label>Select Remix</Form.Label>
           <Form.Control as="select" disabled>
@@ -114,7 +114,6 @@ export default function LeftPane(props) {
             <option>5</option>
           </Form.Control>
         </Form.Group>
-
         <Form.Group controlId="media">
           <Form.Label>Upload Video File</Form.Label>
           <Form.Control
@@ -127,8 +126,8 @@ export default function LeftPane(props) {
           />
           <Form.Text className="text-muted">Video or Image</Form.Text>
         </Form.Group>
-        <div style={{ height: "25vh" }}>
-          video/image placeholder
+
+        <div style={{ height: "30vh" }}>
           {input.file ? (
             <MediaPreview input={input} setMediaPlayTime={setMediaPlayTime} />
           ) : (

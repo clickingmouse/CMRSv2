@@ -20,16 +20,15 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <Container>
-        <Row>
-          <Col>
-            <LeftPane handleSubmit={handleSubmit} />
-          </Col>
-          <Col>
-            <RightPane frames={frames} />
-          </Col>
-        </Row>
-      </Container>
+
+      <Row>
+        <Col>
+          <LeftPane handleSubmit={handleSubmit} />
+        </Col>
+        <Col>
+          <RightPane frames={frames} />
+        </Col>
+      </Row>
     </div>
   );
 }
